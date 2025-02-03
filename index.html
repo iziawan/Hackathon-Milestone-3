@@ -1,61 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>Dynamic Resume Builder</title>
- <link rel="stylesheet" href="style.css">
-</head>
-<body>
- <div class="container">
- <h1>Dynamic Resume Builder</h1>
- <form id="resume-form">
- <!-- Personal Information -->
- <fieldset>
- <legend>Personal Information</legend>
- <label for="name">Name:</label>
- <input type="text" id="name" required>
- <label for="email">Email:</label>
- <input type="email" id="email" required>
- </fieldset>
-<!-- Education -->
-<fieldset>
-    <legend>Education</legend>
-    <label for="degree">Degree:</label>
-    <input type="text" id="degree" required>
-    <label for="school">School/University:</label>
-    <input type="text" id="school" required>
-    <label for="gradYear">Graduation Year:</label>
-    <input type="number" id="gradYear" required>
-    </fieldset>
-    <!-- Work Experience -->
- <fieldset>
-    <legend>Work Experience</legend>
-    <label for="jobTitle">Job Title:</label>
-    <input type="text" id="jobTitle" required>
-    <label for="company">Company:</label>
-    <input type="text" id="company" required>
-    <label for="years">Years of Experience:</label>
-    <input type="number" id="years" required>
-    </fieldset>
-    <!-- Skills -->
- <fieldset>
-    <legend>Skills</legend>
-    <label for="skills">Skills (comma separated):</label>
-    <input type="text" id="skills" required>
-    </fieldset>
-   
-    <button type="submit">Generate Resume</button>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resume Builder</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Dynamic Resume Builder</h1>
+    <form id="resumeForm">
+      <fieldset>
+        <legend>Personal Information</legend>
+
+        <label for="name">Name: </label>
+        <input type="text" id="name" name="name" required />
+
+        <label for="email">Email: </label>
+        <input type="email" name="email" id="email" required />
+
+        <label for="phone">Phone: </label>
+        <input type="tel" id="phone" name="phone" required />
+      </fieldset>
+
+      <!-- education -->
+
+      <fieldset>
+        <legend>Education</legend>
+        <label for="education">Education</label>
+        <textarea name="education" id="education" rows="4" required></textarea
+        ><br />
+      </fieldset>
+
+      <!-- experience -->
+
+      <fieldset>
+        <legend>Experience</legend>
+        <label for="experience">Experience</label>
+        <textarea name="experience" id="experience" rows="4" required></textarea
+        ><br />
+      </fieldset>
+
+      <!-- skills -->
+
+      <fieldset>
+        <legend>Skills</legend>
+        <label for="skills">Skills</label>
+        <textarea name="skills" id="skills" rows="4" required></textarea><br />
+      </fieldset>
+      <button type="submit">Generate Resume Below</button>
     </form>
-   
-    <hr>
-    <!-- Dynamic Resume Display -->
- <div id="resume">
-    <h2>Your Resume</h2>
-    <div id="resume-content"></div>
-    </div>
-    </div>
-   
-    <script src="index.js" defer></script>
-   </body>
-   </html>
+
+    <div id="resumeOutput"></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

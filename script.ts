@@ -1,44 +1,66 @@
-// Get references to form and resume content elements
-const form = document.getElementById('resume-form') as HTMLFormElement;
-const resumeContent = document.getElementById('resume-content') as HTMLDivElement;
+document
+  .getElementById("resumeForm")
+  ?.addEventListener("submit", function (event) {
+    event.preventDefault();
 
-// Event listener for form submission
-form.addEventListener('submit', (event) => {
-    event.preventDefault(); // Prevent form from submitting the traditional way
+    const nameElement = document.getElementById("name") as HTMLInputElement;
+    const emailElement = document.getElementById("email") as HTMLInputElement;
+    const phoneElement = document.getElementById("phone") as HTMLInputElement;
+    const educationElement = document.getElementById(
+      "education"
+    ) as HTMLInputElement;
+    const experienceElement = document.getElementById(
+      "experience"
+    ) as HTMLInputElement;
+    const skillsElement = document.getElementById("skills") as HTMLInputElement;
 
-    // Get form values
-    const name = (document.getElementById('name') as HTMLInputElement).value;
-    const email = (document.getElementById('email') as HTMLInputElement).value;
-    const phone = (document.getElementById('phone') as HTMLInputElement).value;
-    const education = (document.getElementById('education') as HTMLTextAreaElement).value;
-    const workExperience = (document.getElementById('work-experience') as HTMLTextAreaElement).value;
-    const skills = (document.getElementById('skills') as HTMLInputElement).value;
+    // Declare variables outside the if block
+    let name = "";
+    let email = "";
+    let phone = "";
+    let education = "";
+    let experience = "";
+    let skills = "";
 
-    // Basic Validation
-    if (!name || !email || !phone || !education || !workExperience || !skills) {
-        alert("Please fill out all fields.");
-        return;
+    // Assign values only if elements exist
+    if (
+      nameElement &&
+      emailElement &&
+      educationElement &&
+      experienceElement &&
+      skillsElement
+    ) {
+      name = nameElement.value;
+      email = emailElement.value;
+      phone = phoneElement.value;
+      education = educationElement.value;
+      experience = experienceElement.value;
+      skills = skillsElement.value;
+    } else {
+      console.error("One or more elements are missing");
+      return; // Exit if any elements are missing
     }
 
-    // Generate resume content
-    const resumeHTML = `
-        <h3>Personal Information</h3>
-        <p><strong>Name:</strong> ${name}</p>
-        <p><strong>Email:</strong> <a href="mailto:${email}">${email}</a></p>
-        <p><strong>Phone:</strong> ${phone}</p>
-        
-        <h3>Education</h3>
-        <p>${education}</p>
-        
-        <h3>Work Experience</h3>
-        <p>${workExperience}</p>
-        
-        <h3>Skills</h3>
-        <ul>
-            ${skills.split(',').map(skill => `<li>${skill.trim()}</li>`).join('')}
-        </ul>
+    const resumeOutput = `
+    <h2>Resume</h2>
+    <p><strong>Name:</strong> ${name} </p>
+    <p><strong>Email:</strong> ${email}</p>
+    <p><strong>Phone:</strong> ${phone}</p>
+
+    <h3>Education</h3>
+    <p>${education}</p>
+
+    <h3>Experience</h3>
+    <p>${experience}</p>
+
+    <h3>Skills</h3>
+    <p>${skills}</p>
     `;
 
-    // Update resume content
-    resumeContent.innerHTML = resumeHTML;
-});
+    const resumeOutputElement = document.getElementById("resumeOutput");
+    if (resumeOutputElement) {
+      resumeOutputElement.innerHTML = resumeOutput;
+    } else {
+      console.error("The resume output element is missing");
+    }
+  });

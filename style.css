@@ -1,150 +1,190 @@
-* General Body Styling */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #e9ecef;
-    padding: 20px;
-    margin: 0;
-    color: #333;
-    line-height: 1.6;
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-color: #f4f7f6;
+  color: #333;
 }
 
-/* Container Styling */
-.container {
-    max-width: 900px;
-    margin: 30px auto;
-    background: #ffffff;
-    padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease-in-out;
-}
-/* Heading */
 h1 {
-    font-size: 2.5rem;
-    margin-bottom: 15px;
-    color: #215557;
-    text-align: center;
-    letter-spacing: 1.5px;
+  text-align: center;
+  color: #2c3e50;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 40px;
+  letter-spacing: 1px;
 }
 
-h2 {
-    font-size: 1.8rem;
-    color: #343a40;
-    text-align: center;
-    margin-bottom: 20px;
-    letter-spacing: 1px;
-}
-
-/* Form Styling */
 form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
+  max-width: 700px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  padding: 30px;
+  border-top: 5px solid #e74c3c;
+
 fieldset {
-    border: 2px solid #215557;
-    padding: 20px;
-    border-radius: 8px;
-    background-color: #f8f9fa;
+  border: none;
+  padding: 0;
+  margin-bottom: 30px;
 }
 
 legend {
-    padding: 0 10px;
-    font-weight: bold;
-    color: #215557;
-    font-size: 1.1rem;
+  font-weight: 700;
+  color: #34495e;
+  font-size: 1.3rem;
+  border-bottom: 2px solid #e74c3c;
+  padding-bottom: 5px;
+  margin-bottom: 20px;
+  display: block;
 }
 
 label {
-    margin-top: 10px;
-    font-weight: 600;
-    font-size: 1rem;
-    color: #495057;
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+  display: block;
+  color: #34495e;
 }
 
-input {
-    margin-top: 5px;
-    margin-right: 15px;  
-    padding: 10px;
-    border: 1px solid #ced4da;
-    border-radius: 5px;
-    width: calc(100% - 15px);  
-    font-size: 1rem;
-    transition: border-color 0.3s ease;
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+  width: 100%;
+  padding: 12px;
+  margin-top: 6px;
+  border-radius: 8px;
+  border: 2px solid #bdc3c7;
+  box-sizing: border-box;
+  background-color: #ecf0f1;
+  font-size: 1rem;
+  transition: all 0.3s ease;
 }
 
-input:focus {
-    outline: none;
-    border-color: #215557;
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.25);
+input:focus,
+textarea:focus {
+  border-color: #e74c3c;
+  outline: none;
+  box-shadow: 0 0 8px rgba(231, 76, 60, 0.3);
 }
-/* Button Styling */
+
 button {
-    padding: 12px;
-    background-color: #215557;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 1.1rem;
-    transition: background-color 0.3s ease;
-    width: 100%;
+  display: block;
+  width: 100%;
+  padding: 15px;
+  background-color: #e74c3c;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  text-transform: uppercase;
 }
 
 button:hover {
-    background-color: #215557;
+  background-color: #c0392b;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
-/* Dynamic Resume Display */
-#resume {
-    margin-top: 30px;
-    border-top: 3px solid #215557;
-    padding-top: 20px;
+#resumeOutput {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 30px;
+  border: 2px solid #e74c3c;
+  border-radius: 12px;
+  background-color: #ffffff;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  color: #2c3e50;
+  font-family: "Poppins", sans-serif;
 }
 
-#resume-content {
-    background-color: #f8f9fa;
-    padding: 25px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-    font-size: 1.1rem;
-}
-/* Resume Title */
-#resume-content h3 {
-    color: #007bff;
-    font-size: 1.8rem;
-    font-weight: bold;
+/* Resume heading styling */
+#resumeOutput h2 {
+  text-align: center;
+  color: #2c3e50; /* Consistent with main heading color */
+  font-size: 2rem;
+  margin-bottom: 20px;
+  font-weight: 700; /* Bolder for emphasis */
+  letter-spacing: 1px; /* Consistent with main heading */
 }
 
-#resume-content p {
-    margin-bottom: 10px;
+/* Section titles within resume */
+#resumeOutput h3 {
+  color: #e74c3c; /* Consistent with form and button color */
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #bdc3c7; /* Light grey for a subtle effect */
+  padding-bottom: 8px;
+  display: flex;
+  align-items: center;
 }
 
-#resume-content h4 {
-    color: #343a40;
-    margin-bottom: 10px;
-    font-size: 1.5rem;
-    border-bottom: 2px solid #215557;
-    padding-bottom: 5px;
+/* Icon for section titles */
+#resumeOutput h3::before {
+  content: "✧";
+  color: #e74c3c; /* Consistent with section titles color */
+  margin-right: 10px;
+  font-size: 1.2rem;
 }
 
-/* Skills List */
-ul {
-    list-style: none;
-    padding: 0;
+/* Text and content inside the resume */
+#resumeOutput p {
+  font-size: 1.1rem;
+  margin: 10px 0;
+  line-height: 1.8;
+  color: #333; /* Darker color for readability */
 }
 
-ul li {
-    background-color: #215557;
-    color: white;
-    display: inline-block;
-    padding: 8px 15px;
-    margin: 5px;
-    border-radius: 5px;
-    font-size: 0.95rem;
-    transition: background-color 0.3s ease;
+/* Styling for list items in resume (e.g., skills, experience) */
+#resumeOutput ul {
+  padding-left: 20px;
 }
 
-ul li:hover {
-    background-color: #d8ca0d;
+#resumeOutput ul li {
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+  color: #555;
+  position: relative;
+  padding-left: 20px;
+}
+
+#resumeOutput ul li::before {
+  content: "•";
+  color: #e74c3c; /* Consistent with list item bullets color */
+  position: absolute;
+  left: 0;
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  button {
+    font-size: 1rem;
+    padding: 12px;
+  }
+
+  #resumeOutput {
+    padding: 20px;
+  }
+
+  #resumeOutput h2 {
+    font-size: 1.6rem;
+  }
+
+  #resumeOutput h3 {
+    font-size: 1.2rem;
+  }
+
+  #resumeOutput p {
+    font-size: 1rem;
+  }
 }
