@@ -1,109 +1,150 @@
-/* General reset to remove default margins */
-* {
+* General Body Styling */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #e9ecef;
+    padding: 20px;
     margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    color: #333;
+    line-height: 1.6;
 }
 
 /* Container Styling */
 .container {
     max-width: 900px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #f8f9fa;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin: 30px auto;
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
 }
-
-/* Section Heading */
-h2 {
-    font-size: 24px;
-    color: #333;
-    margin-bottom: 10px;
-    border-bottom: 2px solid #eaeaea;
-    padding-bottom: 5px;
-}
-
-/* Form and Fieldset Styling */
-form {
-    margin-bottom: 20px;
-}
-
-fieldset {
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 10px;
+/* Heading */
+h1 {
+    font-size: 2.5rem;
     margin-bottom: 15px;
+    color: #215557;
+    text-align: center;
+    letter-spacing: 1.5px;
+}
+
+h2 {
+    font-size: 1.8rem;
+    color: #343a40;
+    text-align: center;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+/* Form Styling */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+fieldset {
+    border: 2px solid #215557;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #f8f9fa;
 }
 
 legend {
+    padding: 0 10px;
     font-weight: bold;
-    padding: 0 5px;
+    color: #215557;
+    font-size: 1.1rem;
 }
 
 label {
-    display: block;
-    margin-bottom: 5px;
+    margin-top: 10px;
+    font-weight: 600;
+    font-size: 1rem;
+    color: #495057;
 }
 
-input[type="text"],
-input[type="email"],
-input[type="tel"],
-textarea {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #ccc;
+input {
+    margin-top: 5px;
+    margin-right: 15px;  
+    padding: 10px;
+    border: 1px solid #ced4da;
     border-radius: 5px;
-    margin-bottom: 10px;
+    width: calc(100% - 15px);  
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
 }
 
-textarea {
-    height: 100px;
+input:focus {
+    outline: none;
+    border-color: #215557;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.25);
 }
-
 /* Button Styling */
 button {
-    background-color: #007bff;
+    padding: 12px;
+    background-color: #215557;
     color: white;
     border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+    width: 100%;
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #215557;
 }
 
-/* Resume Content Styling */
+/* Dynamic Resume Display */
+#resume {
+    margin-top: 30px;
+    border-top: 3px solid #215557;
+    padding-top: 20px;
+}
+
 #resume-content {
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    background-color: #fff;
+    background-color: #f8f9fa;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    font-size: 1.1rem;
+}
+/* Resume Title */
+#resume-content h3 {
+    color: #007bff;
+    font-size: 1.8rem;
+    font-weight: bold;
 }
 
-/* Basic Mobile Design */
-@media (max-width: 768px) {
-    .container {
-        padding: 15px;
-        width: 90%;
-    }
+#resume-content p {
+    margin-bottom: 10px;
+}
 
-    h2 {
-        font-size: 22px;
-    }
+#resume-content h4 {
+    color: #343a40;
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+    border-bottom: 2px solid #215557;
+    padding-bottom: 5px;
+}
 
-    input[type="text"],
-    input[type="email"],
-    input[type="tel"],
-    textarea {
-        padding: 12px;
-    }
+/* Skills List */
+ul {
+    list-style: none;
+    padding: 0;
+}
 
-    button {
-        width: 100%;
-        padding: 12px;
-    }
+ul li {
+    background-color: #215557;
+    color: white;
+    display: inline-block;
+    padding: 8px 15px;
+    margin: 5px;
+    border-radius: 5px;
+    font-size: 0.95rem;
+    transition: background-color 0.3s ease;
+}
+
+ul li:hover {
+    background-color: #d8ca0d;
 }
