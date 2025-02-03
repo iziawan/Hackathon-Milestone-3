@@ -1,23 +1,35 @@
-// Get references to form and resume content elements
-var form = document.getElementById('resume-form');
-var resumeContent = document.getElementById('resume-content');
-// Event listener for form submission
-form.addEventListener('submit', function (event) {
-    event.preventDefault(); // Prevent form from submitting the traditional way
-    // Get form values
-    var name = document.getElementById('name').value;
-    var email = document.getElementById('email').value;
-    var phone = document.getElementById('phone').value;
-    var education = document.getElementById('education').value;
-    var workExperience = document.getElementById('work-experience').value;
-    var skills = document.getElementById('skills').value;
-    // Basic Validation
-    if (!name || !email || !phone || !education || !workExperience || !skills) {
-        alert("Please fill out all fields.");
-        return;
-    }
-    // Generate resume content
-    var resumeHTML = "\n        <h3>Personal Information</h3>\n        <p><strong>Name:</strong> ".concat(name, "</p>\n        <p><strong>Email:</strong> <a href=\"mailto:").concat(email, "\">").concat(email, "</a></p>\n        <p><strong>Phone:</strong> ").concat(phone, "</p>\n        \n        <h3>Education</h3>\n        <p>").concat(education, "</p>\n        \n        <h3>Work Experience</h3>\n        <p>").concat(workExperience, "</p>\n        \n        <h3>Skills</h3>\n        <ul>\n            ").concat(skills.split(',').map(function (skill) { return "<li>".concat(skill.trim(), "</li>"); }).join(''), "\n        </ul>\n    ");
-    // Update resume content
-    resumeContent.innerHTML = resumeHTML;
+const form = document.getElementById('resume-form');
+const resumeContent = document.getElementById('resume-content');
+
+ form.addEventListener('submit', function(event) {
+    event.preventDefault();
+
+     const formData = {
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        degree: document.getElementById('degree').value,
+        school: document.getElementById('school').value,
+        gradYear: parseInt(document.getElementById('gradYear').value),
+        jobTitle: document.getElementById('jobTitle').value,
+        company: document.getElementById('company').value,
+        years: parseInt(document.getElementById('years').value),
+        skills: document.getElementById('skills').value.split(',').map(skill => skill.trim())
+    };
+
+     generateResume(formData);
 });
+
+ function generateResume(data) {
+    resumeContent.innerHTML = `
+        <h3>${data.name}</h3>
+        <p>Email: ${data.email}</p>
+        <h4>Education</h4>
+        <p>${data.degree} from ${data.school} (Class of ${data.gradYear})</p>
+        <h4>Work Experience</h4>
+        <p>${data.jobTitle} at ${data.company} (${data.years} years)</p>
+        <h4>Skills</h4>
+        <ul>
+            ${data.skills.map(skill => `<li>${skill}</li>`).join('')}
+        </ul>
+    `;
+}
